@@ -119,3 +119,12 @@ const promptUser = () => {
         };
     });
 };
+
+const createPage = (htmlContent) => {
+    fs.writeFile('./index.html', htmlContent, err => {
+        if (err) {
+            throw err
+        };
+        console.log('Page created successfully!');
+    });
+};
