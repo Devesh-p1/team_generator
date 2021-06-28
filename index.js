@@ -128,3 +128,12 @@ const createPage = (htmlContent) => {
         console.log('Page created successfully!');
     });
 };
+
+console.log(`
+Welcome to the Team Profile Generator!  Let's add some employees!
+`);
+
+promptUser()
+    .then(data => makePage(data))
+    .then(generatedHtml => createPage(generatedHtml))
+    .catch(err => console.log(err));
