@@ -106,3 +106,16 @@ const questions = [
         default: true
     }
 ]
+
+const promptUser = () => {
+
+    return inquirer.prompt(questions)
+    .then(userResponse => {
+        Emp.push(userResponse);
+        if (userResponse.addEmp) {
+            return promptUser();
+        } else {
+            return Emp;
+        };
+    });
+};
