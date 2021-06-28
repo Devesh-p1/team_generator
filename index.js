@@ -1,7 +1,7 @@
-const Emp = require('../library/employee');
-const Man = require('../library/manager');
-const Eng = require('../library/engineer');
-const Int = require('../library/intern');
+const Emp = require('../lib/employee');
+const Man = require('../lib/manager');
+const Eng = require('../lib/engineer');
+const Int = require('../lib/intern');
 const reName = name => {
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 };
@@ -59,3 +59,35 @@ const addEmp = employeeInfo => {
         return Cards;
 
 }
+
+const genHtml = tempData => {
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Team Profile</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
+    </head>
+    <body>
+        <section class="hero is-primary is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">The Team</h1>
+                </div>
+            </div>
+        </section>
+        <main class="m-6">
+            <div class="columns is-flex is-flex-wrap-wrap is-flex-direction-row is-justify-content-center">
+                ${addEmp(tempData)}
+            </div>
+        </main>
+    </body>
+    </html>
+    `;
+};
+
+module.exports = genHtml;
