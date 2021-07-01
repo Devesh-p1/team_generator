@@ -1,4 +1,4 @@
-const Employee = require ('../lib/employee');
+const Emp = require ('../lib/employee');
 const expectToBe = (obj, value) => {
     expect(obj).toBe(value);
 };
@@ -11,4 +11,13 @@ const expectNum = obj => {
     expect(obj).toEqual(expect.any(Number));
 };
 
-const emp = new Employee('John', 'Doe', 1);
+const emp = new Emp('John', 'Doe', 1);
+
+test('creates a employee object', () => {
+    expectToBe(emp.fName,'John');
+    expectToBe(emp.lName, 'Doe');
+    expectNum(emp.id);
+    expectStr(emp.email, '@');
+    expectToBe(emp.role, 'Employee');
+    expectToBe(emp.icon, 'fas fa-briefcase');
+});
