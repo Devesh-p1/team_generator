@@ -21,3 +21,7 @@ test('creates a employee object', () => {
     expectToBe(emp.role, 'Employee');
     expectToBe(emp.icon, 'fas fa-briefcase');
 });
+
+test('gets employee\'s name', () => {
+    expectStr(emp.getName(), `${emp.fName} ${emp.lName}`);
+});
