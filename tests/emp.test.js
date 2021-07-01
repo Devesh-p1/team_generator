@@ -25,3 +25,8 @@ test('creates a employee object', () => {
 test('gets employee\'s name', () => {
     expectStr(emp.getName(), `${emp.fName} ${emp.lName}`);
 });
+
+
+test('gets employee\'s ID', () => {
+    expectStr(emp.getId(), `${emp.id}`);
+});
